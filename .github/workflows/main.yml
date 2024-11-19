@@ -31,4 +31,4 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MYTESTPROJECT_0604 }}
           # run: firebase deploy --only hosting:${{ secrets.FIREBASE_HOSTING_ID }} -P ${{ secrets.FIREBASE_PROJECT_ID }}
-          run: firebase deploy mytestproject-0604
+        run: firebase deploy mytestproject-0604
