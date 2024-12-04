@@ -4,8 +4,8 @@ import { AppService } from "./app.service";
 import { UserModule } from "./user/user.module";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import * as fs from "fs";
-import { User } from "./user/entities/user.entity";
-import { Company } from "./company/entities/company.entity";
+import { User } from "../libs/entities/user.entity";
+import { Company } from "../libs/entities/company.entity";
 import { CompanyModule } from "./company/company.module";
 // import { UserController } from "./user/user.controller";
 
@@ -13,7 +13,7 @@ import { CompanyModule } from "./company/company.module";
   imports: [
     TypeOrmModule.forRootAsync({
       useFactory: async () => {
-        const configPath = __dirname + "/../db-config.json";
+        const configPath = __dirname + "/../../db-config.json";
         let config: Record<string, any>;
 
         const data = fs.readFileSync(configPath, "utf-8");

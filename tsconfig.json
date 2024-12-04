@@ -11,5 +11,10 @@
     "emitDecoratorMetadata": true
   },
   "compileOnSave": true,
-  "include": ["src"]
+  "include": [
+    "src",
+    "libs/entities",
+    "libs/repositories/company.repository.ts",
+    "libs/repositories/user.repository.ts"
+  ]
 }
