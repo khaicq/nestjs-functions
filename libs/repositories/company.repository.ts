@@ -1,16 +1,21 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Company } from "../entities/company.entity";
-import { Repository } from "typeorm";
+import { DataSource, Repository } from "typeorm";
+import { BaseRepository } from "./base.repository";
 
 @Injectable()
-export class CompanyRepository {
+export class CompanyRepository extends BaseRepository<Company> {
   constructor(
     @InjectRepository(Company)
-    private companyRepository: Repository<Company>
-  ) {}
+    private companyRepository: Repository<Company>,
+    dataSource: DataSource
+  ) {
+    super(dataSource, Company);
+  }
 
-  find() {
+  hello() {
+    console.log("company.repository");
     return this.companyRepository.find();
   }
 }

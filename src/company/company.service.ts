@@ -5,7 +5,7 @@ import { CompanyRepository } from "../../libs/repositories/company.repository";
 export class CompanyService {
   constructor(private companyRepo: CompanyRepository) {}
 
-  find() {
+  async find() {
     return this.companyRepo.find();
   }
 }
